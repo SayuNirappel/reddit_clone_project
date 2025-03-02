@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reddit_clone_project/global_widgets/reusable_containers.dart';
 
 void main() {}
 
@@ -14,7 +15,7 @@ class LoginPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              height: 40,
+              height: 50,
             ),
             CircleAvatar(
               radius: 40,
@@ -27,23 +28,7 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            Container(
-              height: 40,
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black, width: 1),
-                  borderRadius: BorderRadius.circular(20)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Icon(Icons.mobile_friendly),
-                  Text(
-                    "Continue with phone number",
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox()
-                ],
-              ),
-            ),
+            ReusableContainer(),
             Container(),
             Container(),
             Spacer(),
