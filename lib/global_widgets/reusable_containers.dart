@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ReusableContainer extends StatelessWidget {
+  final String ctext;
   const ReusableContainer({
+    required this.ctext,
     super.key,
   });
 
@@ -22,7 +24,7 @@ class ReusableContainer extends StatelessWidget {
                 child: Icon(Icons.mobile_friendly)),
             Expanded(
               child: Text(
-                "Continue with phone number",
+                ctext,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                 textAlign: TextAlign.center,
               ),

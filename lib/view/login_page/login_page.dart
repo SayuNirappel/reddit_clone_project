@@ -28,9 +28,21 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            ReusableContainer(),
-            Container(),
-            Container(),
+            ReusableContainer(
+              ctext: "Continue with phone number",
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            ReusableContainer(
+              ctext: "Continue with Google",
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            ReusableContainer(
+              ctext: "Use email or Username",
+            ),
             Spacer(),
             Text("data"),
             Row(
