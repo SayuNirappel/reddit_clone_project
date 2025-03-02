@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:reddit_clone_project/utils/constants/color_constants.dart';
+import 'package:reddit_clone_project/view/home_page/home_page.dart';
+import 'package:reddit_clone_project/view/warning_page/warning_page.dart';
 
 class ReusableContainer extends StatelessWidget {
   final String ctext;
@@ -11,26 +14,32 @@ class ReusableContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 40,
-      decoration: BoxDecoration(
-          border: Border.all(color: Colors.black, width: 1),
-          borderRadius: BorderRadius.circular(20)),
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Align(alignment: Alignment.centerLeft, child: Icon(cicon)),
-            Expanded(
-              child: Text(
-                ctext,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-                textAlign: TextAlign.center,
+    return InkWell(
+      onTap: () {
+        Navigator.pushReplacement(
+            (context), MaterialPageRoute(builder: (context) => HomePage()));
+      },
+      child: Container(
+        height: 40,
+        decoration: BoxDecoration(
+            border: Border.all(color: ColorConstants.black, width: 1),
+            borderRadius: BorderRadius.circular(20)),
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Align(alignment: Alignment.centerLeft, child: Icon(cicon)),
+              Expanded(
+                child: Text(
+                  ctext,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                  textAlign: TextAlign.center,
+                ),
               ),
-            ),
-            SizedBox()
-          ],
+              SizedBox()
+            ],
+          ),
         ),
       ),
     );

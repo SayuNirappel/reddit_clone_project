@@ -1,5 +1,11 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:reddit_clone_project/global_widgets/reusable_containers.dart';
+import 'package:reddit_clone_project/main.dart';
+import 'package:reddit_clone_project/utils/constants/color_constants.dart';
+import 'package:reddit_clone_project/utils/constants/image_constants.dart';
+import 'package:reddit_clone_project/view/signup_page/signup_page.dart';
+import 'package:reddit_clone_project/view/warning_page/warning_page.dart';
 
 void main() {}
 
@@ -19,7 +25,7 @@ class LoginPage extends StatelessWidget {
             ),
             CircleAvatar(
               radius: 40,
-              backgroundImage: AssetImage("assets/images/redditlogo.jpeg"),
+              backgroundImage: AssetImage(ImageConstants.titleImage),
             ),
             Text(
               "Log in to Reddit",
@@ -30,7 +36,7 @@ class LoginPage extends StatelessWidget {
             ),
             ReusableContainer(
               ctext: "Continue with phone number",
-              cicon: Icons.mobile_friendly,
+              cicon: Icons.phone_android,
             ),
             SizedBox(
               height: 10,
@@ -44,20 +50,82 @@ class LoginPage extends StatelessWidget {
             ),
             ReusableContainer(
               ctext: "Use email or Username",
-              cicon: Icons.person,
+              cicon: Icons.person_2_outlined,
             ),
             Spacer(),
-            Text("data"),
+            RichText(
+                text: TextSpan(children: [
+              TextSpan(text: "By continuing, you agree to our "),
+              TextSpan(
+                  text: "User Agreement",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => WarningPage()));
+                    }),
+              TextSpan(text: " and acknowledge that you understand the "),
+              TextSpan(
+                  text: "Privacy Policy",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => WarningPage()));
+                    })
+            ])),
+            SizedBox(
+              height: 10,
+            ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(),
-                Text("I agree to receive emails about cool stuff on Reddit")
+                Container(
+                  height: 10,
+                  width: 10,
+                  decoration:
+                      BoxDecoration(border: Border.all(color: Colors.black)),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Flexible(
+                  child: Text(
+                    "I agree to receive emails about cool stuff on Reddit",
+                    softWrap: true,
+                  ),
+                )
               ],
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text("Don't have an account?"),
-                TextButton(onPressed: () {}, child: Text("Sign up"))
+                TextButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SignupPage()));
+                    },
+                    child: Container(
+                        decoration: BoxDecoration(
+                            color: ColorConstants.bgrey,
+                            border: Border.all(color: ColorConstants.white),
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(7),
+                          child: Text(
+                            "Sign up",
+                            style: TextStyle(
+                                color: ColorConstants.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        )))
               ],
             )
           ],
