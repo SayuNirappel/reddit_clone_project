@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 class ReusableContainer extends StatelessWidget {
   final String ctext;
+  final IconData cicon;
   const ReusableContainer({
     required this.ctext,
+    required this.cicon,
     super.key,
   });
 
@@ -19,9 +21,7 @@ class ReusableContainer extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Align(
-                alignment: Alignment.centerLeft,
-                child: Icon(Icons.mobile_friendly)),
+            Align(alignment: Alignment.centerLeft, child: Icon(cicon)),
             Expanded(
               child: Text(
                 ctext,

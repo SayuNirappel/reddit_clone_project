@@ -30,18 +30,21 @@ class LoginPage extends StatelessWidget {
             ),
             ReusableContainer(
               ctext: "Continue with phone number",
+              cicon: Icons.mobile_friendly,
             ),
             SizedBox(
               height: 10,
             ),
             ReusableContainer(
               ctext: "Continue with Google",
+              cicon: Icons.g_mobiledata,
             ),
             SizedBox(
               height: 10,
             ),
             ReusableContainer(
               ctext: "Use email or Username",
+              cicon: Icons.person,
             ),
             Spacer(),
             Text("data"),
