@@ -14,32 +14,26 @@ class ReusableContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        Navigator.pushReplacement(
-            (context), MaterialPageRoute(builder: (context) => HomePage()));
-      },
-      child: Container(
-        height: 40,
-        decoration: BoxDecoration(
-            border: Border.all(color: ColorConstants.black, width: 1),
-            borderRadius: BorderRadius.circular(20)),
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Align(alignment: Alignment.centerLeft, child: Icon(cicon)),
-              Expanded(
-                child: Text(
-                  ctext,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-                  textAlign: TextAlign.center,
-                ),
+    return Container(
+      height: 40,
+      decoration: BoxDecoration(
+          border: Border.all(color: ColorConstants.black, width: 1),
+          borderRadius: BorderRadius.circular(20)),
+      child: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Align(alignment: Alignment.centerLeft, child: Icon(cicon)),
+            Expanded(
+              child: Text(
+                ctext,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                textAlign: TextAlign.center,
               ),
-              SizedBox()
-            ],
-          ),
+            ),
+            SizedBox()
+          ],
         ),
       ),
     );

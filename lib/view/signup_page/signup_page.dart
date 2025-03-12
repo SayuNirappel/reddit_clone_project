@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:reddit_clone_project/global_widgets/reusable_containers.dart';
 import 'package:reddit_clone_project/utils/constants/color_constants.dart';
 import 'package:reddit_clone_project/utils/constants/image_constants.dart';
+import 'package:reddit_clone_project/view/home_page/home_page.dart';
 import 'package:reddit_clone_project/view/login_page/login_page.dart';
 import 'package:reddit_clone_project/view/warning_page/warning_page.dart';
 
@@ -33,23 +34,41 @@ class SignupPage extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            ReusableContainer(
-              ctext: "Continue with phone number",
-              cicon: Icons.phone_android,
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement((context),
+                    MaterialPageRoute(builder: (context) => HomePage()));
+              },
+              child: ReusableContainer(
+                ctext: "Continue with phone number",
+                cicon: Icons.phone_android,
+              ),
             ),
             SizedBox(
               height: 10,
             ),
-            ReusableContainer(
-              ctext: "Continue with Google",
-              cicon: Icons.g_mobiledata,
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement((context),
+                    MaterialPageRoute(builder: (context) => HomePage()));
+              },
+              child: ReusableContainer(
+                ctext: "Continue with Google",
+                cicon: Icons.g_mobiledata,
+              ),
             ),
             SizedBox(
               height: 10,
             ),
-            ReusableContainer(
-              ctext: "Continue with email",
-              cicon: Icons.person_2_outlined,
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement((context),
+                    MaterialPageRoute(builder: (context) => HomePage()));
+              },
+              child: ReusableContainer(
+                ctext: "Continue with email",
+                cicon: Icons.person_2_outlined,
+              ),
             ),
             Spacer(),
             RichText(

@@ -4,6 +4,8 @@ import 'package:reddit_clone_project/global_widgets/reusable_containers.dart';
 import 'package:reddit_clone_project/main.dart';
 import 'package:reddit_clone_project/utils/constants/color_constants.dart';
 import 'package:reddit_clone_project/utils/constants/image_constants.dart';
+import 'package:reddit_clone_project/view/home_page/home_page.dart';
+import 'package:reddit_clone_project/view/log_data_page/log_data_page.dart';
 import 'package:reddit_clone_project/view/signup_page/signup_page.dart';
 import 'package:reddit_clone_project/view/warning_page/warning_page.dart';
 
@@ -36,23 +38,53 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            ReusableContainer(
-              ctext: "Continue with phone number",
-              cicon: Icons.phone_android,
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement(
+                    (context),
+                    MaterialPageRoute(
+                        builder: (context) => LogDataPage(
+                              dintype: "Phone Number",
+                            )));
+              },
+              child: ReusableContainer(
+                ctext: "Continue with phone number",
+                cicon: Icons.phone_android,
+              ),
             ),
             SizedBox(
               height: 10,
             ),
-            ReusableContainer(
-              ctext: "Continue with Google",
-              cicon: Icons.g_mobiledata,
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement(
+                    (context),
+                    MaterialPageRoute(
+                        builder: (context) => LogDataPage(
+                              dintype: "GMail ID",
+                            )));
+              },
+              child: ReusableContainer(
+                ctext: "Continue with Google",
+                cicon: Icons.g_mobiledata,
+              ),
             ),
             SizedBox(
               height: 10,
             ),
-            ReusableContainer(
-              ctext: "Use email or Username",
-              cicon: Icons.person_2_outlined,
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement(
+                    (context),
+                    MaterialPageRoute(
+                        builder: (context) => LogDataPage(
+                              dintype: "E Mail ID",
+                            )));
+              },
+              child: ReusableContainer(
+                ctext: "Use email or Username",
+                cicon: Icons.person_2_outlined,
+              ),
             ),
             Spacer(),
             //Lower portion of Login Page
