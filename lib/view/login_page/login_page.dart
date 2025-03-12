@@ -27,6 +27,8 @@ class LoginPage extends StatelessWidget {
               radius: 40,
               backgroundImage: AssetImage(ImageConstants.titleImage),
             ),
+
+            //Login Options
             Text(
               "Log in to Reddit",
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
@@ -53,6 +55,7 @@ class LoginPage extends StatelessWidget {
               cicon: Icons.person_2_outlined,
             ),
             Spacer(),
+            //Lower portion of Login Page
             RichText(
                 text: TextSpan(children: [
               TextSpan(text: "By continuing, you agree to our "),
@@ -101,6 +104,10 @@ class LoginPage extends StatelessWidget {
                 )
               ],
             ),
+            SizedBox(
+              height: 10,
+            ),
+            Divider(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

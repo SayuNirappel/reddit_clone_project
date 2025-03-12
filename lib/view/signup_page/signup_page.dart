@@ -100,6 +100,10 @@ class SignupPage extends StatelessWidget {
                 )
               ],
             ),
+            SizedBox(
+              height: 10,
+            ),
+            Divider(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
