@@ -12,7 +12,8 @@ class Log_data_in extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         CircleAvatar(
           backgroundImage: AssetImage(ImageConstants.titleImage),
@@ -37,16 +38,20 @@ class Log_data_in extends StatelessWidget {
                 (context), MaterialPageRoute(builder: (context) => HomePage()));
           },
           child: Container(
+            width: 200,
             decoration: BoxDecoration(
                 border: Border.all(),
                 borderRadius: BorderRadius.circular(10),
-                color: Colors.black),
+                color: Colors.deepOrangeAccent),
             child: Padding(
               padding: const EdgeInsets.all(10),
               child: Text(
                 "Continue",
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15),
               ),
             ),
           ),
