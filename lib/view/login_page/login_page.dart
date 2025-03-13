@@ -4,7 +4,7 @@ import 'package:reddit_clone_project/global_widgets/reusable_containers.dart';
 import 'package:reddit_clone_project/main.dart';
 import 'package:reddit_clone_project/utils/constants/color_constants.dart';
 import 'package:reddit_clone_project/utils/constants/image_constants.dart';
-import 'package:reddit_clone_project/view/home_page/home_page.dart';
+import 'package:reddit_clone_project/view/bottom_navigation_bar/home_page/home_page.dart';
 import 'package:reddit_clone_project/view/log_data_page/log_data_page.dart';
 import 'package:reddit_clone_project/view/signup_page/signup_page.dart';
 import 'package:reddit_clone_project/view/warning_page/warning_page.dart';

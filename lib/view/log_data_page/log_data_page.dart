@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:reddit_clone_project/global_widgets/reusable_textfields.dart';
 import 'package:reddit_clone_project/utils/constants/image_constants.dart';
-import 'package:reddit_clone_project/view/home_page/home_page.dart';
+import 'package:reddit_clone_project/view/bottom_navigation_bar/home_page/home_page.dart';
 
 void main() {}
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:reddit_clone_project/utils/constants/image_constants.dart';
-import 'package:reddit_clone_project/view/home_page/home_page.dart';
+import 'package:reddit_clone_project/view/bottom_navigation_bar/bottom_navigation.dart';
+import 'package:reddit_clone_project/view/bottom_navigation_bar/home_page/home_page.dart';
 
 class Log_data_in extends StatelessWidget {
   final String dintype;
@@ -34,8 +35,8 @@ class Log_data_in extends StatelessWidget {
         ),
         InkWell(
           onTap: () {
-            Navigator.pushReplacement(
-                (context), MaterialPageRoute(builder: (context) => HomePage()));
+            Navigator.pushReplacement((context),
+                MaterialPageRoute(builder: (context) => BottomNavigation()));
           },
           child: Container(
             width: 200,
