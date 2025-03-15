@@ -17,13 +17,19 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //Normal drawer (From Left) body
+      drawer: Drawer(
+        child: Center(
+          child: Text("Drawer Working"),
+        ),
+      ),
+      //end Drawer (from right) body
+      endDrawer: Drawer(
+        child: Center(
+          child: Text("End Drawer Working"),
+        ),
+      ),
       appBar: AppBar(
-        leading: IconButton(
-            onPressed: () {
-              Navigator.push((context),
-                  MaterialPageRoute(builder: (context) => WarningPage()));
-            },
-            icon: Icon(Icons.menu)),
         title: InkWell(
           onTap: () {
             Navigator.push((context),
@@ -40,8 +46,15 @@ class _HomePageState extends State<HomePage> {
           SizedBox(
             width: 10,
           ),
-          CircleAvatar(
-            foregroundImage: AssetImage(ImageConstants.titleImage),
+          Builder(
+            builder: (context) => InkWell(
+              onTap: () {
+                Scaffold.of(context).openEndDrawer();
+              },
+              child: CircleAvatar(
+                foregroundImage: AssetImage(ImageConstants.titleImage),
+              ),
+            ),
           ),
           SizedBox(
             width: 10,
@@ -55,13 +68,14 @@ class _HomePageState extends State<HomePage> {
           itemBuilder: (context, index) {
             return Container(
               decoration: BoxDecoration(
-                color: Colors.lightGreenAccent,
+                color: ColorConstants.white,
               ),
               child: Column(
                 spacing: 20,
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  //post details including profile
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -99,6 +113,7 @@ class _HomePageState extends State<HomePage> {
                     HomeFeedDb.homeFeedList[index].feedPostTitle,
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
+                  //optional text or image
                   Container(
                       child: Column(
                     spacing: 10,
@@ -117,37 +132,89 @@ class _HomePageState extends State<HomePage> {
                         )
                     ],
                   )),
+                  // post action area
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          children: [
-                            Container(
-                              child: Row(),
-                            ),
-                            Container(
-                              child: Row(),
-                            )
-                          ],
-                        ),
+                        // up down and comment
                         Row(
                           spacing: 5,
                           children: [
                             Container(
-                              width: 40,
+                              height: 35,
                               decoration: BoxDecoration(
-                                  border:
-                                      Border.all(width: 2, color: Colors.black),
+                                  border: Border.all(
+                                      width: 2, color: ColorConstants.bgrey),
+                                  borderRadius: BorderRadius.circular(50)),
+                              child: Row(
+                                children: [
+                                  IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(
+                                        Icons.arrow_upward_outlined,
+                                        //color: _buildArrowColor(index),
+                                        size: 20,
+                                      )),
+                                  if (HomeFeedDb
+                                          .homeFeedList[index].feedPostUp >
+                                      HomeFeedDb
+                                          .homeFeedList[index].feedPostDown)
+                                    Text(
+                                        "${HomeFeedDb.homeFeedList[index].feedPostUp}"),
+                                  IconButton(
+                                      onPressed: () {},
+                                      icon:
+                                          Icon(Icons.arrow_downward, size: 20)),
+                                  if (HomeFeedDb
+                                          .homeFeedList[index].feedPostUp <
+                                      HomeFeedDb
+                                          .homeFeedList[index].feedPostDown)
+                                    Text(
+                                        "${HomeFeedDb.homeFeedList[index].feedPostDown}"),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              width: 80,
+                              height: 35,
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                      width: 2, color: ColorConstants.bgrey),
+                                  borderRadius: BorderRadius.circular(50)),
+                              child: Row(
+                                children: [
+                                  IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(Icons.chat_bubble)),
+                                  Text(
+                                      "${HomeFeedDb.homeFeedList[index].feedPostComments.length}")
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+
+                        //share
+                        Row(
+                          spacing: 5,
+                          children: [
+                            Container(
+                              height: 35,
+                              width: 45,
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                      width: 2, color: ColorConstants.bgrey),
                                   borderRadius: BorderRadius.circular(50)),
                               child: Icon(Icons.verified_outlined),
                             ),
                             Container(
-                              width: 40,
+                              height: 35,
+                              width: 45,
                               decoration: BoxDecoration(
-                                  border:
-                                      Border.all(width: 2, color: Colors.black),
+                                  border: Border.all(
+                                      width: 2, color: ColorConstants.bgrey),
                                   borderRadius: BorderRadius.circular(50)),
                               child: Icon(Icons.arrow_outward),
                             )
@@ -164,4 +231,17 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+//arrow color
+
+Color? _buildArrowColor(int index) {
+  if (HomeFeedDb.homeFeedList[index].feedPostUp >
+      HomeFeedDb.homeFeedList[index].feedPostDown) {
+    return Colors.green.shade900;
+  } else if (HomeFeedDb.homeFeedList[index].feedPostUp <
+      HomeFeedDb.homeFeedList[index].feedPostDown) {
+    return Colors.redAccent;
+  }
+  return null;
 }

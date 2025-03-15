@@ -15,7 +15,11 @@ class HomeFeedDb {
           "A detailed comparison of Flutter and React Native in 2025...",
       feedPostUp: 120,
       feedPostDown: 8,
-      feedPostComments: ["Great comparison!", "I prefer Flutter!"],
+      feedPostComments: [
+        "Great comparison!",
+        "I prefer Flutter!",
+        "Mind-blowing!"
+      ],
     ),
     HomeFeedModel(
       feedProfilePic:
