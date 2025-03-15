@@ -24,22 +24,18 @@ class CommunityPage extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
-        title: InkWell(
-          onTap: () {
-            Navigator.push((context),
-                MaterialPageRoute(builder: (context) => WarningPage()));
-          },
-          child: Text(
-            "Reddit",
-            style: TextStyle(
-                fontWeight: FontWeight.bold, color: ColorConstants.rorange),
-          ),
+        title: Text(
+          "Communities",
+          style: TextStyle(
+              fontWeight: FontWeight.bold, color: ColorConstants.black),
         ),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-          SizedBox(
-            width: 10,
-          ),
+          IconButton(
+              onPressed: () {
+                Navigator.push((context),
+                    MaterialPageRoute(builder: (context) => WarningPage()));
+              },
+              icon: Icon(Icons.search)),
           Builder(
             builder: (context) => InkWell(
               onTap: () {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reddit_clone_project/view/bottom_navigation_bar/community_page/community_page.dart';
 import 'package:reddit_clone_project/view/bottom_navigation_bar/home_page/home_page.dart';
 import 'package:reddit_clone_project/view/login_page/login_page.dart';
 
@@ -11,7 +12,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: HomePage()
+    return MaterialApp(debugShowCheckedModeBanner: false, home: CommunityPage()
+        //HomePage()
         //LoginPage(),
         );
   }
