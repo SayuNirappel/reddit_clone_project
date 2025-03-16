@@ -17,6 +17,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String? drpvalue;
+  String? dpnamevalue;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,10 +98,230 @@ class _HomePageState extends State<HomePage> {
       )),
       //end Drawer (from right) body
       endDrawer: Drawer(
-        child: Center(
-          child: Text("End Drawer Working"),
-        ),
-      ),
+          child: Column(
+        spacing: 5,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          //profile pic
+          Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: NetworkImage(
+                        "https://images.pexels.com/photos/5749881/pexels-photo-5749881.jpeg?auto=compress&cs=tinysrgb&w=600"),
+                    fit: BoxFit.cover)),
+            height: 300,
+            width: 300,
+          ),
+          //profile change ddl
+          Center(
+            child: DropdownButton(
+                value: dpnamevalue,
+                hint: Text("Professor"),
+                items: [
+                  DropdownMenuItem(
+                    value: "1",
+                    child: Text("Professor"),
+                  ),
+                  DropdownMenuItem(
+                    value: "2",
+                    child: Text("Ice Queen"),
+                  )
+                ],
+                onChanged: (value) {
+                  dpnamevalue = value;
+                  setState(() {});
+                }),
+          ),
+          //online container
+          Center(
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.greenAccent.shade700),
+                  borderRadius: BorderRadius.circular(10)),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Text(
+                  "Online Status on",
+                  style: TextStyle(color: Colors.greenAccent.shade700),
+                ),
+              ),
+            ),
+          ),
+          //karma and age
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.keyboard_command_key),
+              Column(
+                children: [Text("13"), Text("karma")],
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Icon(Icons.cake),
+              Column(
+                children: [Text("130d"), Text("Reddit age")],
+              )
+            ],
+          ),
+          //achievements
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CircleAvatar(
+                backgroundImage: NetworkImage(
+                    "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600"),
+              ),
+              Column(
+                children: [Text("10"), Text("Achievements")],
+              ),
+              Icon(Icons.arrow_forward_ios)
+            ],
+          ),
+
+          //profile
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+            child: Row(
+              spacing: 10,
+              children: [
+                Icon(
+                  Icons.person,
+                  color: ColorConstants.bgrey,
+                ),
+                Text(
+                  "Profile",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
+          ),
+
+          //create a community
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+            child: Row(
+              spacing: 10,
+              children: [
+                Icon(
+                  Icons.people,
+                  color: ColorConstants.bgrey,
+                ),
+                Text(
+                  "Create a community",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
+          ),
+          //contributor program
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+            child: Row(
+              spacing: 10,
+              children: [
+                Icon(
+                  Icons.flag_circle_sharp,
+                  color: ColorConstants.bgrey,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Contributor program",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      "0 gold earned",
+                      style: TextStyle(color: Colors.blueGrey),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
+          //reddit premium
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+            child: Row(
+              spacing: 10,
+              children: [
+                Icon(
+                  Icons.window,
+                  color: ColorConstants.bgrey,
+                ),
+                Column(
+                  children: [
+                    Text(
+                      "Reddit Premium",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      "Ads free browsing",
+                      style: TextStyle(color: Colors.blueGrey),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
+          //saved
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+            child: Row(
+              spacing: 10,
+              children: [
+                Icon(
+                  Icons.copy,
+                  color: ColorConstants.bgrey,
+                ),
+                Text(
+                  "Saved",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
+          ),
+          //history
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+            child: Row(
+              spacing: 10,
+              children: [
+                Icon(
+                  Icons.history,
+                  color: ColorConstants.bgrey,
+                ),
+                Text(
+                  "History",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
+          ),
+          //settings
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+            child: Row(
+              spacing: 10,
+              children: [
+                Icon(
+                  Icons.settings,
+                  color: ColorConstants.bgrey,
+                ),
+                Text(
+                  "Settings",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
+          ),
+        ],
+      )),
+      //
+      //Appbar
+      //
       appBar: AppBar(
         title: InkWell(
           onTap: () {
