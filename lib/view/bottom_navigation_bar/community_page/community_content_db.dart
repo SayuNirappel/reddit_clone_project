@@ -170,20 +170,20 @@ class CommunityContentDb {
     CommunityContentModel(
         proPic:
             "https://images.pexels.com/photos/5473955/pexels-photo-5473955.jpeg?auto=compress&cs=tinysrgb&w=600",
-        pName: "Microsoft Security & Defender",
+        pName: "Microsoft Security",
         members: "19K Members",
         discription:
             "Discuss cybersecurity, antivirus, and Microsoft Defender."),
     CommunityContentModel(
         proPic:
             "https://images.pexels.com/photos/9783350/pexels-photo-9783350.jpeg?auto=compress&cs=tinysrgb&w=600",
-        pName: "Microsoft Edge & Browsing",
+        pName: "Microsoft Edge",
         members: "20K Members",
         discription: "Tips and tricks for Edge, Bing, and web browsing."),
     CommunityContentModel(
         proPic:
             "https://images.pexels.com/photos/4974916/pexels-photo-4974916.jpeg?auto=compress&cs=tinysrgb&w=600",
-        pName: "Power Automate & Low-Code",
+        pName: "Power Automate e",
         members: "25K Members",
         discription:
             "Learn automation with Power Automate, Power Apps, and Flow."),

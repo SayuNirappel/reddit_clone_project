@@ -74,6 +74,7 @@ class CommunityPage extends StatelessWidget {
                           ),
                         Text(
                           CommunityTitleModel.communityTitles[index],
+                          overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
@@ -197,6 +198,7 @@ class _BuildContainerGridBuilder1 extends StatelessWidget {
                                   Text(
                                     CommunityContentDb
                                         .communityContentList2[gindex].pName,
+                                    overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
                                         color: ColorConstants.black,
                                         fontWeight: FontWeight.bold),
