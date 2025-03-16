@@ -117,16 +117,25 @@ class _CreatePageState extends State<CreatePage> {
             ),
             //tags
             Container(
+              height: 40,
+              width: 250,
               decoration: BoxDecoration(
                 color: ColorConstants.bgrey,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(8),
-                child: Text(
-                  "Add tag and flair (optional)",
-                  style: TextStyle(
-                      color: ColorConstants.black, fontWeight: FontWeight.bold),
+                child: Center(
+                  child: TextField(
+                    decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Add tag and flair (optional)",
+                        hintMaxLines: 1,
+                        hintStyle: TextStyle(
+                            //fontSize: 30,
+                            color: ColorConstants.black,
+                            fontWeight: FontWeight.bold)),
+                  ),
                 ),
               ),
             ),

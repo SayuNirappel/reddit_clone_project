@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:reddit_clone_project/model/community_title_model.dart';
 import 'package:reddit_clone_project/utils/constants/color_constants.dart';
 import 'package:reddit_clone_project/utils/constants/image_constants.dart';
+import 'package:reddit_clone_project/view/bottom_navigation_bar/community_page/community_content_db.dart';
 import 'package:reddit_clone_project/view/bottom_navigation_bar/home_page/home_feed_db.dart';
 import 'package:reddit_clone_project/view/warning_page/warning_page.dart';
 
@@ -14,15 +16,85 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String? drpvalue;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       //Normal drawer (From Left) body
       drawer: Drawer(
-        child: Center(
-          child: Text("Drawer Working"),
+          child: Container(
+        margin: EdgeInsets.all(10),
+        child: Column(
+          spacing: 20,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Recently Viewed",
+                  style: TextStyle(
+                      color: ColorConstants.black, fontWeight: FontWeight.bold),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push((context),
+                        MaterialPageRoute(builder: (context) => WarningPage()));
+                  },
+                  child: Text(
+                    "See All",
+                    style: TextStyle(
+                        color: ColorConstants.black,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
+            //
+            //Hard coded area need to use index
+            //
+            _buildRaw(0),
+            _buildRaw(1),
+            _buildRaw(2),
+
+            Padding(
+                padding: const EdgeInsets.all(10),
+                child: Container(
+                    child: DropdownButton(
+                        value: drpvalue,
+                        //
+                        // hint
+                        //
+                        hint: Text(
+                          "Your Communities",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: ColorConstants.black),
+                        ),
+                        //
+                        //drawer dd items
+                        items: List.generate(
+                            CommunityTitleModel.ct1.length,
+                            (index) => DropdownMenuItem(
+                                  value: CommunityTitleModel.ct1[index],
+                                  child: InkWell(
+                                      onTap: () {
+                                        Navigator.push(
+                                            (context),
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    WarningPage()));
+                                      },
+                                      child:
+                                          Text(CommunityTitleModel.ct1[index])),
+                                )),
+                        onChanged: (value) {
+                          drpvalue = value;
+                          setState(() {});
+                        })))
+          ],
         ),
-      ),
+      )),
       //end Drawer (from right) body
       endDrawer: Drawer(
         child: Center(
@@ -228,6 +300,26 @@ class _HomePageState extends State<HomePage> {
             );
           },
         ),
+      ),
+    );
+  }
+
+  Widget _buildRaw(int vc) {
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+            (context), MaterialPageRoute(builder: (context) => WarningPage()));
+      },
+      child: Row(
+        spacing: 15,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          CircleAvatar(
+            backgroundImage: NetworkImage(
+                CommunityContentDb.communityContentList2[vc].proPic),
+          ),
+          Text(CommunityContentDb.communityContentList2[vc].pName)
+        ],
       ),
     );
   }
