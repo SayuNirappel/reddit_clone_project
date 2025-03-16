@@ -104,14 +104,16 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           //profile pic
-          Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: NetworkImage(
-                        "https://images.pexels.com/photos/5749881/pexels-photo-5749881.jpeg?auto=compress&cs=tinysrgb&w=600"),
-                    fit: BoxFit.cover)),
-            height: 300,
-            width: 300,
+          Center(
+            child: Container(
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: NetworkImage(
+                          "https://images.pexels.com/photos/5749881/pexels-photo-5749881.jpeg?auto=compress&cs=tinysrgb&w=600"),
+                      fit: BoxFit.cover)),
+              height: 200,
+              width: 200,
+            ),
           ),
           //profile change ddl
           Center(
