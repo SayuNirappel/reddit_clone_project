@@ -5,6 +5,7 @@ import 'package:reddit_clone_project/view/bottom_navigation_bar/create_page/crea
 import 'package:reddit_clone_project/view/bottom_navigation_bar/home_page/home_page.dart';
 import 'package:reddit_clone_project/view/bottom_navigation_bar/inbox_page/inbox_page.dart';
 import 'package:reddit_clone_project/view/login_page/login_page.dart';
+import 'package:reddit_clone_project/view/single_page_feed/single_page_feed.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:
+      home: //SinglePageFeed()
           //InboxPage()
           //ChatPage()
           //CreatePage()

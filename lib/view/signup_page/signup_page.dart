@@ -89,7 +89,7 @@ class SignupPage extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => WarningPage()));
+                              builder: (context) => SinglePageFeed()));
                     }),
               TextSpan(text: " and acknowledge that you understand the "),
               TextSpan(
@@ -100,7 +100,7 @@ class SignupPage extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => WarningPage()));
+                              builder: (context) => SinglePageFeed()));
                     })
             ])),
             SizedBox(

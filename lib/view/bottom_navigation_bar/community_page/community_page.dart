@@ -42,7 +42,7 @@ class _CommunityPageState extends State<CommunityPage> {
                       Navigator.push(
                           (context),
                           MaterialPageRoute(
-                              builder: (context) => WarningPage()));
+                              builder: (context) => SinglePageFeed()));
                     },
                     child: Text(
                       "See All",
@@ -86,7 +86,7 @@ class _CommunityPageState extends State<CommunityPage> {
                                               (context),
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      WarningPage()));
+                                                      SinglePageFeed()));
                                         },
                                         child: Text(
                                             CommunityTitleModel.ct1[index])),
@@ -113,8 +113,10 @@ class _CommunityPageState extends State<CommunityPage> {
           actions: [
             IconButton(
                 onPressed: () {
-                  Navigator.push((context),
-                      MaterialPageRoute(builder: (context) => WarningPage()));
+                  Navigator.push(
+                      (context),
+                      MaterialPageRoute(
+                          builder: (context) => SinglePageFeed()));
                 },
                 icon: Icon(Icons.search)),
             Builder(
@@ -193,8 +195,8 @@ class _CommunityPageState extends State<CommunityPage> {
   Widget _buildRaw(int vc) {
     return InkWell(
       onTap: () {
-        Navigator.push(
-            (context), MaterialPageRoute(builder: (context) => WarningPage()));
+        Navigator.push((context),
+            MaterialPageRoute(builder: (context) => SinglePageFeed()));
       },
       child: Row(
         spacing: 15,
@@ -373,7 +375,7 @@ class _BuildContainerGridBuilderL extends StatelessWidget {
         itemBuilder: (gcontext, gindex) => InkWell(
               onTap: () {
                 Navigator.push((context),
-                    MaterialPageRoute(builder: (context) => WarningPage()));
+                    MaterialPageRoute(builder: (context) => SinglePageFeed()));
               },
               child: Container(
                 height: 50,

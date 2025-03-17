@@ -39,8 +39,10 @@ class _HomePageState extends State<HomePage> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.push((context),
-                        MaterialPageRoute(builder: (context) => WarningPage()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SinglePageFeed()));
                   },
                   child: Text(
                     "See All",
@@ -84,7 +86,7 @@ class _HomePageState extends State<HomePage> {
                                             (context),
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    WarningPage()));
+                                                    SinglePageFeed()));
                                       },
                                       child:
                                           Text(CommunityTitleModel.ct1[index])),
@@ -328,7 +330,7 @@ class _HomePageState extends State<HomePage> {
         title: InkWell(
           onTap: () {
             Navigator.push((context),
-                MaterialPageRoute(builder: (context) => WarningPage()));
+                MaterialPageRoute(builder: (context) => SinglePageFeed()));
           },
           child: Text(
             "Reddit",
@@ -530,8 +532,8 @@ class _HomePageState extends State<HomePage> {
   Widget _buildRaw(int vc) {
     return InkWell(
       onTap: () {
-        Navigator.push(
-            (context), MaterialPageRoute(builder: (context) => WarningPage()));
+        Navigator.push((context),
+            MaterialPageRoute(builder: (context) => SinglePageFeed()));
       },
       child: Row(
         spacing: 15,

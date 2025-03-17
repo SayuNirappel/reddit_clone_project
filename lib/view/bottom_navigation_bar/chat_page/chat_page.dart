@@ -36,8 +36,10 @@ class _ChatPageState extends State<ChatPage> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.push((context),
-                        MaterialPageRoute(builder: (context) => WarningPage()));
+                    Navigator.push(
+                        (context),
+                        MaterialPageRoute(
+                            builder: (context) => SinglePageFeed()));
                   },
                   child: Text(
                     "See All",
@@ -81,7 +83,7 @@ class _ChatPageState extends State<ChatPage> {
                                             (context),
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    WarningPage()));
+                                                    SinglePageFeed()));
                                       },
                                       child:
                                           Text(CommunityTitleModel.ct1[index])),
@@ -314,8 +316,8 @@ class _ChatPageState extends State<ChatPage> {
   _buildRaw(int vc) {
     return InkWell(
       onTap: () {
-        Navigator.push(
-            (context), MaterialPageRoute(builder: (context) => WarningPage()));
+        Navigator.push((context),
+            MaterialPageRoute(builder: (context) => SinglePageFeed()));
       },
       child: Row(
         spacing: 15,

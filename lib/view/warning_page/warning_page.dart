@@ -3,8 +3,8 @@ import 'package:reddit_clone_project/utils/constants/color_constants.dart';
 
 void main() {}
 
-class WarningPage extends StatelessWidget {
-  const WarningPage({super.key});
+class SinglePageFeed extends StatelessWidget {
+  const SinglePageFeed({super.key});
 
   @override
   Widget build(BuildContext context) {
